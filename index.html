@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Digital Clock</title>
+<style>
+    html,body {
+    height: 100%;
+}
+body {
+    background: #0f3854;
+    background: radial-gradient(ellipse at center,  #0a2e38  0%, #000000 70%);
+    background-size: 100%;
+}
+p {
+    margin: 0;
+    padding: 0;
+}
+#clock {
+    font-family: 'Share Tech Mono', monospace;
+    color: #ffffff;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 3.5rem;
+    transform: translate(-50%, -50%);
+    color: #daf6ff;
+    text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0);
+
+}
+  </style>
+</head>
+<body>
+
+<div id="clock">
+</div>
+
+<script>
+    const currentTime =() => {
+        let curtime = new Date();
+        document.getElementById("clock").innerHTML =curtime.toLocaleTimeString();
+    };
+
+    currentTime();
+
+    setInterval( () => {
+        currentTime();
+    },1000);
+    
+</script>
+
+</body>
+</html>
